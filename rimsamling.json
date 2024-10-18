@@ -1,0 +1,460 @@
+{
+  "Rimsamling": [
+	{
+	   "Julklapp": "Tröja",
+	   "Rim": "Denna skyler en del av kroppen, om du drar den över knoppen.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Strumpor",
+	   "Rim": "Först kommer de i par, sen stannar en i tumlaren kvar.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Strumpor",
+	   "Rim": "Om de längst ner är frusna och blå, sätt då dessa på.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Kalsonger",
+	   "Rim": "Om du kall om baken är, kan du värma den med dessa här.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Hatt",
+	   "Rim": "Värmer inte knoppen när det är kallt, men sitter minsann fräckt och ballt.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Byxor",
+	   "Rim": "Den som inga såna har, hen får gå med rumpan bar.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Byxor",
+	   "Rim": "Att använda dessa bör bli en vana, eftersom benen dina är bleka och dana.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Mössa",
+	   "Rim": "Tänk att ett litet tygstycke, kan rymma så himla mycke’. Tankar, minnen och intelligens och massa andra grejer som inte syns ens.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Mössa",
+	   "Rim": "När vintern är här och kylan blir svår, värmer denna ditt huvud och hår.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Vantar",
+	   "Rim": "Sitter på lemmar och värmer rätt. De passar alla 10 och väger lätt.",
+	   "Kategori": "Kläder"
+	},
+	{
+	   "Julklapp": "Duschcreme",
+	   "Rim": "Om du vill slippa att lukta svett, är denna grej helt rätt. Smörj in med vatten på kroppen och du kommer lukta toppen.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Duschcreme",
+	   "Rim": "Denna känns ju väldigt len och du blir garanterat ren. Doftar minsann riktigt gott och tar dessutom bort allt flott.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Parfym",
+	   "Rim": "Denna lilla sak är från en fransk fabrikör, med innehåll som är odörens sabotör.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Parfym",
+	   "Rim": "Om du vill ljuvligt dofta, använd denna ofta.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Parfym",
+	   "Rim": "Ibland tycker jag du luktar unken, egentligen borde jag köpt hela dunken.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Rakvatten",
+	   "Rim": "Det är blött och det är vått, och det får dig att lukta gott. Efter rakning du detta tar, men ta inte där du dig skar.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Deodorant",
+	   "Rim": "Om du jämt luktar svett, har du inte använt denna rätt.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Ansiktskräm",
+	   "Rim": "En rynka eller två är ingen tragedi, men denna kan faktiskt utföra magi.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Smink",
+	   "Rim": "Detta du kan måla och applicera, men ta lite lagom för att inte chockera.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Rakhyvel",
+	   "Rim": "Med denna försvinner det som kan sticka, men undvik att använda när du har hicka.",
+	   "Kategori": "Kroppsvård"
+	},
+	{
+	   "Julklapp": "Pussel",
+	   "Rim": "Varje liten del är viktig, för att helheten ska bli riktig. Om du sätter varje bit, så blir resultatet värt ditt slit.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Bilbana",
+	   "Rim": "Här har du mycket att göra, först ska du bygga och sedan köra. Det gäller att hålla farten ända till slut från starten.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Gosedjur",
+	   "Rim": "Ett djur du inte kan ha i bur, men som gärna kramas när du är sur.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Lego",
+	   "Rim": "Bygg din skapelse bit för bit, med färgglada klossar är det aldrig ett slit.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Lego",
+	   "Rim": "Med lite fantasi och fallerej, dessa färgglada bitar skapar en finurlig grej.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Lego",
+	   "Rim": "Många små delar gjorda av plast, det sätter du säkert ihop med hast.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Docka",
+	   "Rim": "Denna söta sak behöver mycket kärlek. Passar särskilt bra till mamma, pappa, barn-lek.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Sällskapsspel",
+	   "Rim": "Med detta på bordet blir julen kul, hela familjen får en trevlig jul. Har du tur eller blir du sur?",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Boll",
+	   "Rim": "Studsar högt och studsar lågt, den rullar iväg om du inte är på't",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Boll",
+	   "Rim": "Rund, rullande och alltid redo att fara, denna sak kan konstigt nog roa en hel skara.",
+	   "Kategori": "Leksaker"
+	},
+	{
+	   "Julklapp": "Bio",
+	   "Rim": "På stor duk kan du kika, går en skräckis kommer du skrika.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Bio",
+	   "Rim": "En kväll i mörkret med spännning eller skratt, äventyr på duken håller dig sysselsatt.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Bio",
+	   "Rim": "Från gubben med skägg, en klapp till dig, ett äventyr på duken med skratt och hej. Popcorn och godis i mörkret som sprakar, hoppas kvällen blir rolig och inga snorungar bråkar.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Chokladprovning",
+	   "Rim": "Mörk, ljus, besk och söt och även en och annan nöt. En ren och skär smakexplosion. Här får du uppleva ren kakao-perfektion.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Matlagningskurs",
+	   "Rim": "Med grytor, pannor och bunkar, du känner harmoni. Nu behöver du denna kurs för att skapa magi.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Spa",
+	   "Rim": "Unna dig lyx och en stund med frid, både kroppen och knoppen får riktig kvalitetstid.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Spa",
+	   "Rim": "För vila, ro och total avkoppling. Detta kan ge dig kroppslig och mental förvandling.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Ölprovning",
+	   "Rim": "Skål för smaker, både bitter och söt. Med denna blir får du garanterat glädje och tröst.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Hotellövernattning",
+	   "Rim": "Ta en paus och koppla av, sov en natt på bortaplan och släpp alla krav.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Hotellövernattning",
+	   "Rim": "En natt i lyx där lugnet är stort, sängar som kallar och frukosten kort. En perfekt paus för kropp och själ, en getaway som får hjärtat att må väl.",
+	   "Kategori": "Upplevelser"
+	},
+	{
+	   "Julklapp": "Vattenpass",
+	   "Rim": "Nu kan du se att allt står rakt och snyggt, med denna blir måtten i nivå och arbetet tryggt.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Hammare",
+	   "Rim": "Äntligen kan du slå och banka med stil. Bygga och fixa, med spik blir den nog riktigt stabil.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Skruvmejsel",
+	   "Rim": "Med denna kan du vrida, dra och direkt agera. Perfekt när du behöver skruva ihop och reparera.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Måttband",
+	   "Rim": "Nu kan du minsann mäta allt rätt, så ingen del blir för kort eller för lätt.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Borrmaskin",
+	   "Rim": "Denna kommer du garanterat att gilla, speciellt om du vill snickra och drilla. Skruv och spik du bättre placerar, med denna som med hastighet roterar.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Skruvdragare",
+	   "Rim": "Denna minsann, den snurrar så fort. Skruvandet blir en riktig sport.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Tång",
+	   "Rim": "Med denna sak kan du greppa och dra, perfekt när du behöver fixa och göra det riktigt bra.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Hammare",
+	   "Rim": "För säkerhets skull, stoppa näven i lummen. För annars finns risk att du slår dig på tummen.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Såg",
+	   "Rim": "När träet ska delas rakt och fint, blir det tyvärr en hel del splint.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Såg",
+	   "Rim": "En grej som klarar grovt och trint, med den här blir allt skärande smidigt och fint.",
+	   "Kategori": "Verktyg"
+	},
+	{
+	   "Julklapp": "Pepparkakor",
+	   "Rim": "Doftar av kryddor och julens magi, dessa kakor sprider harmoni.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Popcorn",
+	   "Rim": "När det knastrar i skålen och doften är rätt, gör dessa snacks filmstunden komplett",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Chokladask",
+	   "Rim": "Nötkräm och marsipan, gillas av dem flesta barn. Men körsbär i likör är det ingen som rör.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Chokladkalender",
+	   "Rim": "En lucka om dagen i december är bäst, med denna blir väntan en riktig fest.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Polkagris",
+	   "Rim": "En stång i vitt och rött, den smakar riktigt sött.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Frukt",
+	   "Rim": "Om du för godis har fått rejäl avsmak, ger dessa dig fullt med vitaminer, färger och smak.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Sylt",
+	   "Rim": "En söt liten klapp att ha på ditt bröd, på mackan kommer den lägga sig röd.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Honung",
+	   "Rim": "Söt och klibbig, finns många fabrikat. En gyllene sked gör ditt te delikat.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Knäck",
+	   "Rim": "Segt och gott i varje bett, med nötter eller kryddor smakar det rätt.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Godis",
+	   "Rim": "Det är sött men gjort av löss, svårt att förstå. Men segt och gott, smaska på.",
+	   "Kategori": "Ätbart"
+	},
+	{
+	   "Julklapp": "Dammsugare",
+	   "Rim": "Här är fienden nummer ett, till golvets smuts, damm och fett.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Brandvarnare",
+	   "Rim": "För säkerhet i natten och lugn i ditt hem, denna klapp varnar vid rök, min vän.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Brandsläckare",
+	   "Rim": "Om det brinner bör du ha, nått som släcker väldigt bra.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Tavla",
+	   "Rim": "Färger och former, en syn för ditt öga, en bit av konst som pryder din vägg så föga.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Kniv",
+	   "Rim": "Alla du haft har varit slöa och kassa, men nu får köttet alls sig passa.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Kylskåpsmagnet",
+	   "Rim": "På ditt kylskåp denna ska sitta, pryder och livar upp och får dig att titta.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Ljusstake",
+	   "Rim": "När du på vintern blir så kall, är denna sak riktigt ball. Med denna present blir kvällen så ljus, en gnista av värme i varje hus.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Servetter",
+	   "Rim": "Blir du kladdig är vi bra att ha, torka munnen och var gla'.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Filt",
+	   "Rim": "När dagen blir kylig och natten blir kall, säkert då denna värma dig skall.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Filt",
+	   "Rim": "En vän i kylan, så mjuk och så lätt, med denna blir kvällarna i soffan helt rätt.",
+	   "Kategori": "Till hemmet"
+	},
+	{
+	   "Julklapp": "Datorspel",
+	   "Rim": "Från strategi till äventyr, ett spel för varje smak. Detta kommer ge timmar av nöje men dessvärre en något öm bak.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Datorspel",
+	   "Rim": "Riddare, pirater, tomtar och troll, skjuter, dödar eller spelar boll. Greppa musen med stadig hand så flyger du snabbt till främmande land.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Film",
+	   "Rim": "En berättelse som fångar, i varje scen och ljud, kan ta dig till andra världar och en högre altitud.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Film",
+	   "Rim": "Tänk att timmar av underhållning för att glädja och liva, rymms på denna lilla skiva.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Cd",
+	   "Rim": "På formen borde ju alla fatta, att det rör sig om en digital platta. Så lyssna nu och njut, från början till slut.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Mobiltelefon",
+	   "Rim": "Håll den i dina händer och vart du dig i världen vänder, den googlar allt och svaren dig sänder.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Tidningsprenumeration",
+	   "Rim": "Vecka ut och vecka in, kommer den i lådan din. Det blir ett roligt tidsfördriv, kryssa, läs och skriv.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Bok",
+	   "Rim": "I bläddrande sidor finner du nya perspektiv, på 600 sidor får du kunskap och liv.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Bok",
+	   "Rim": "Fylld med blad fast ingen blomma, innehåller text, punkt och en massa komma.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Ljudbok",
+	   "Rim": "När du ska varva ner och ta det lugnt, behöver du bara denna, inte lyfta något tungt. Det är överskattat och anstränga både syn och arm, när man bara kan lyssna, det har sin charm.",
+	   "Kategori": "Media"
+	},
+	{
+	   "Julklapp": "Gymkort",
+	   "Rim": "För muskler, styrka och motion, ja, allt du kan komma på. Detta kort ger dig möjlighet att nya höjder nå.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Massage",
+	   "Rim": "När musklerna spänner och stressen blir svår, en sådan ger lugn som länge består.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Järntabletter",
+	   "Rim": "I tabletter eller rödaktig saft, med detta tillskott får du alltid ny kraft.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Proteinpulver",
+	   "Rim": "Du som tränar hårt, vill bygga muskler och bli slank. Detta pulver är riktigt bra och burken är silverblank.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Spikmatta",
+	   "Rim": "Här får du av omtanke en vass sak, super både för rygg och för bak. Kanske känner du dig som en igelkott, men efter kommer du må riktigt gott.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Tandborste",
+	   "Rim": "Här är grejen som tar bort alla troll, såna som man inte ser på håll.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Vattenflaska",
+	   "Rim": "Detta är något som är bra att ha, när du dricka på träningen ska.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Vattenflaska",
+	   "Rim": "Håll dig hydrerad, det är ju en regel, ha bara vätskan i denna, klar och utan medel.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Yogamatta",
+	   "Rim": "För stunder av lugn och meditativ kraft, med denna matta blir sinnet så friskt och du får huvudet på skaft.",
+	   "Kategori": "Hälsa"
+	},
+	{
+	   "Julklapp": "Yogamatta",
+	   "Rim": "Med denna matta kan du nå din inre själ och rymd, i lotusställning finner du frid, de mörka molnen i skymd.",
+	   "Kategori": "Hälsa"
+	}
+  ]
+}
+
+
+
+
+
+
