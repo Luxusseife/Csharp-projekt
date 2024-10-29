@@ -83,7 +83,7 @@ class Program
 
                 // Avslutar applikationen.
                 case "0":
-                    Console.WriteLine("\nAppen stängs nu ner. Lycka till med dina julklappsrim!");
+                    Console.WriteLine("\nApplikationen stängs nu ner. Lycka till med dina julklappsrim!");
                     break;
 
                 // Visar ett felmeddelande vid ogiltigt val.
@@ -108,6 +108,13 @@ class Program
 
         // Skapar en variabel för julafton utifrån årets datum.
         DateTime christmas = new DateTime(today.Year, 12, 24);
+
+        // Kontrollerar om datumet är efter detta årets julafton. Då sätts julafton till att vara nästa års julafton.
+        if (today > christmas)
+        {
+            // Lägger till ett år till julaftonsdatumet
+            christmas = christmas.AddYears(1);
+        }
 
         // Beräknar skillnaden mellan dagens datum och julafton.
         TimeSpan daysUntilChristmas = christmas.Subtract(today);
