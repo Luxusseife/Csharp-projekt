@@ -22,12 +22,13 @@ class Program
 
             // Skriver ut en "meny" för julklappsrims-applikationen.
             Console.WriteLine("\nVÄLKOMMEN TILL JENNY'S JULKLAPPSRIM!");
-            Console.WriteLine("\nVälj ett av följande val:");
-            Console.WriteLine("\n1 - Sök rim för en specfik julklapp.");
-            Console.WriteLine("2 - Sök julklappar utifrån kategori.");
+            Console.WriteLine("\nIdag är det bara X dagar kvar till julafton.");
+            Console.WriteLine("\nVad önskar du göra?");
+            Console.WriteLine("\n1 - Söka rim för en specfik julklapp.");
+            Console.WriteLine("2 - Söka julklappar utifrån kategori.");
             Console.WriteLine("3 - Spela 'Gissa julklappen'.");
             Console.WriteLine("4 - Visa alla rim lagrade i JSON-filen.");
-            Console.WriteLine("\n0 - Avsluta appen.\n");
+            Console.WriteLine("\n0 - Avsluta applikationen.\n");
 
             // Läser in användarens input.
             userInput = Console.ReadLine();
