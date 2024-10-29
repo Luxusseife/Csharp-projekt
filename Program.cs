@@ -22,7 +22,9 @@ class Program
 
             // Skriver ut en "meny" för julklappsrims-applikationen.
             Console.WriteLine("\nVÄLKOMMEN TILL JENNY'S JULKLAPPSRIM!");
-            Console.WriteLine("\nIdag är det bara X dagar kvar till julafton.");
+            // Anropar nedräknare för julafton.
+            ShowDaysUntilChristmas();
+            // Fortsätter utskrift av meny...
             Console.WriteLine("\nVad önskar du göra?");
             Console.WriteLine("\n1 - Söka rim för en specfik julklapp.");
             Console.WriteLine("2 - Söka julklappar utifrån kategori.");
@@ -96,5 +98,35 @@ class Program
 
             // Loopen avslutas när användaren väljer att avsluta med 0.
         } while (userInput != "0");
+    }
+
+    // Funktion som visar en nedräkning till julafton i hela dagar.
+    static void ShowDaysUntilChristmas()
+    {
+        // Skapar en variabel som innehåller dagens datum och tid.
+        DateTime today = DateTime.Now;
+        
+        // Skapar en variabel för julafton utifrån årets datum.
+        DateTime christmas = new DateTime(today.Year, 12, 24);
+
+        // Beräknar skillnaden mellan dagens datum och julafton.
+        TimeSpan daysUntilChristmas = christmas.Subtract(today);
+        
+        // Villkor för en dynamisk utskrift utifrån antalet dagar kvar till julafton.
+        // Om det är julafton idag...
+        if (daysUntilChristmas.Days == 0)
+        {
+            Console.WriteLine("\nIdag är det julafton! God jul!");
+        }
+        // Om det är julafton imorrn...
+        else if (daysUntilChristmas.Days == 1)
+        {
+            Console.WriteLine("\nImorrn är det äntligen julafton!");
+        }
+        // Om det är flera dagar till julafton...
+        else
+        {
+            Console.WriteLine($"\nIdag är det bara {daysUntilChristmas.Days} dagar kvar till julafton!");
+        }
     }
 }

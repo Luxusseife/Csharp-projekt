@@ -1,6 +1,6 @@
 # MOMENT 5, projekt.
 
-## Konsolapplikationen "Jenny's julklappsrim" erbjuder användaren tre val:
+## Konsolapplikationen "Jenny's julklappsrim" visar antal dagar kvar till julafton och erbjuder användaren tre val:
 
 ### Söka rim utifrån angiven julklapp 
 
