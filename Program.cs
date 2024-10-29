@@ -50,7 +50,7 @@ class Program
 
                 // Startar spelet "Gissa julklappen".
                 case "3":
-                    Console.WriteLine("\nSpelet fungerar inte än...");
+                    ShowGameMenu();
                     break;
 
                 // Visa alla rim lagrade i JSON-filen.
@@ -105,13 +105,13 @@ class Program
     {
         // Skapar en variabel som innehåller dagens datum och tid.
         DateTime today = DateTime.Now;
-        
+
         // Skapar en variabel för julafton utifrån årets datum.
         DateTime christmas = new DateTime(today.Year, 12, 24);
 
         // Beräknar skillnaden mellan dagens datum och julafton.
         TimeSpan daysUntilChristmas = christmas.Subtract(today);
-        
+
         // Villkor för en dynamisk utskrift utifrån antalet dagar kvar till julafton.
         // Om det är julafton idag...
         if (daysUntilChristmas.Days == 0)
@@ -129,4 +129,66 @@ class Program
             Console.WriteLine($"\nIdag är det bara {daysUntilChristmas.Days} dagar kvar till julafton!");
         }
     }
+
+    static void ShowGameMenu()
+    {
+        // Initierar val-variabel (hanterar null-värde med ?).
+        string? userChoice;
+
+        // Skapar en ny array med giltiga användar-val.
+        var validChoices = new[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+
+        // Loopen körs så länge villkoret, true, uppfylls.
+        while (true)
+        {
+            // Rensar konsollen innan menyn visas.
+            Console.Clear();
+            // Skriver ut en "meny" för spelet "Gissa julklappen".
+            Console.WriteLine("\nVÄLKOMMEN TILL SPELET 'GISSA JULKLAPPEN'!");
+            Console.WriteLine("\nDu ska nu få välja en kategori att gissa julklappar från. Dessa kategorier finns tillgängliga:");
+            Console.WriteLine("\n1 - Kläder");
+            Console.WriteLine("2 - Kroppsvård");
+            Console.WriteLine("3 - Leksaker");
+            Console.WriteLine("4 - Upplevelser");
+            Console.WriteLine("5 - Verktyg");
+            Console.WriteLine("6 - Ätbart");
+            Console.WriteLine("7 - Till hemmet");
+            Console.WriteLine("8 - Media");
+            Console.WriteLine("9 - Hälsa");
+            Console.WriteLine("\nAnge ditt val med en siffra mellan 1 och 9. Vill du avbryta spelet, ange 0.\n");
+
+            userChoice = Console.ReadLine();
+
+            // Kontrollerar om valet är 0 och avslutar i så fall spelet.
+            if (userChoice == "0")
+            {
+                Console.WriteLine("\nDu skickas nu tillbaka till huvudmenyn.");
+                // Hoppar ur loopen.
+                break;
+            }
+            // Kontrollerar om valet är mellan 1 och 9 och går i så fall vidare med vald kategori.
+            else if (validChoices.Contains(userChoice))
+            {
+                // Startar spelet.
+                Console.WriteLine($"\nDu valde kategori {userChoice}. Nu startar spelet. Lycka till!");
+                // Anropar funktionen StartGuessingGame() för att starta spelet med den valda kategorin.
+                //StartGuessingGame();
+            }
+            // Visar ett felmeddelande vid ogiltigt val.
+            else
+            {
+                Console.WriteLine("\nEtt felaktigt val har gjorts. Försök igen!");
+            }
+
+            // Ber användaren trycka på ENTER för att gå vidare med valet som gjorts.
+            Console.WriteLine("\nTryck på ENTER för att fortsätta.");
+            Console.ReadLine();
+        }
+    }
+
+    // Funktion som startar och kör gissningsspelet.
+    /*static void StartGuessingGame() 
+    {
+
+    }*/
 }
