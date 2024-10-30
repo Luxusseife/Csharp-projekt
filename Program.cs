@@ -137,6 +137,7 @@ class Program
         }
     }
 
+    // Funktion som visar spelmenyn och hanterar användarens val.
     static void ShowGameMenu()
     {
         // Initierar val-variabel (hanterar null-värde med ?).
@@ -176,10 +177,8 @@ class Program
             // Kontrollerar om valet är mellan 1 och 9 och går i så fall vidare med vald kategori.
             else if (validChoices.Contains(userChoice))
             {
-                // Startar spelet.
-                Console.WriteLine($"\nDu valde kategori {userChoice}. Nu startar spelet. Lycka till!");
                 // Anropar funktionen StartGuessingGame() för att starta spelet med den valda kategorin.
-                //StartGuessingGame();
+                StartGuessingGame(userChoice);
             }
             // Visar ett felmeddelande vid ogiltigt val.
             else
@@ -194,8 +193,28 @@ class Program
     }
 
     // Funktion som startar och kör gissningsspelet.
-    /*static void StartGuessingGame() 
+    static void StartGuessingGame(string userChoice)
     {
+        // En ordbok skapas för att kunna slå upp kategori baserat på användarens sifferval.
+        var categories = new Dictionary<string, string>
+        {
+            { "1", "Kläder" },
+            { "2", "Kroppsvård" },
+            { "3", "Leksaker" },
+            { "4", "Upplevelser" },
+            { "5", "Verktyg" },
+            { "6", "Ätbart" },
+            { "7", "Till hemmet" },
+            { "8", "Media" },
+            { "9", "Hälsa" }
+        };
 
-    }*/
+        // Kontrollerar om användarvalet (nyckeln) finns i ordboken. Om den finns lagras kategorinamnet i selectedCategory. 
+        if (categories.TryGetValue(userChoice, out var selectedCategory))
+        {
+            // Informerar användaren om den valda kategorin och förklarar hur spelet går till.
+            Console.WriteLine($"\nDu valde '{selectedCategory}' och kommer nu få gissa julklappen för 10 rim ur den kategorin.");
+            Console.WriteLine($"För varje rätt svar kommer du få ett poäng. Högsta möjliga resultat är 10/10. Lycka till!");
+        }
+    }
 }
