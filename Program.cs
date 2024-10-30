@@ -11,6 +11,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Ser till att all output och input i konsollen hanterar svenska tecken korrekt.
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.InputEncoding = System.Text.Encoding.Unicode;
+
         // Initierar input-variabel (hanterar null-värde med ?).
         string? userInput;
 
@@ -29,7 +33,7 @@ class Program
             Console.WriteLine("\n1 - Söka rim för en specfik julklapp.");
             Console.WriteLine("2 - Söka julklappar utifrån kategori.");
             Console.WriteLine("3 - Spela 'Gissa julklappen'.");
-            Console.WriteLine("4 - Visa alla rim lagrade i JSON-filen.");
+            //Console.WriteLine("4 - Visa alla rim lagrade i JSON-filen.");
             Console.WriteLine("\n0 - Avsluta applikationen.\n");
 
             // Läser in användarens input.
@@ -53,7 +57,7 @@ class Program
                     ShowGameMenu();
                     break;
 
-                // Visa alla rim lagrade i JSON-filen.
+                /* Visa alla rim lagrade i JSON-filen.
                 case "4":
                     // Läser in JSON-filen som en sträng.
                     string jsonFile = File.ReadAllText("rimsamling.json");
@@ -79,7 +83,7 @@ class Program
                             Console.WriteLine();
                         }
                     }
-                    break;
+                    break;*/
 
                 // Avslutar applikationen.
                 case "0":
@@ -178,7 +182,7 @@ class Program
             else if (validChoices.Contains(userChoice))
             {
                 // Anropar funktionen StartGuessingGame() för att starta spelet med den valda kategorin.
-                StartGuessingGame(userChoice);
+                StartGuessingGame(userChoice!);
             }
             // Visar ett felmeddelande vid ogiltigt val.
             else
@@ -193,10 +197,23 @@ class Program
     }
 
     // Funktion som startar och kör gissningsspelet.
-    static void StartGuessingGame(string userChoice)
+    static void StartGuessingGame(string? userChoice)
     {
-        // En ordbok skapas för att kunna slå upp kategori baserat på användarens sifferval.
-        var categories = new Dictionary<string, string>
+        // Läser in JSON-filen som en sträng.
+        string jsonFile = File.ReadAllText("rimsamling.json");
+
+        // Deserialiserar JSON-strängen till ett RimList-objekt (hanterar nullvärden med ett ?)
+        RimList? rimList = JsonSerializer.Deserialize<RimList>(jsonFile);
+
+        // Kontrollerar om värdet är null och hanterar det med ett meddelande.
+        if (rimList == null || rimList.Rimsamling == null)
+        {
+            Console.WriteLine("Tyvärr, inga rim hittades.");
+        }
+        else
+        {
+            // Skapar en ordbok för att kunna slå upp kategori baserat på användarens sifferval.
+            var categories = new Dictionary<string, string>
         {
             { "1", "Kläder" },
             { "2", "Kroppsvård" },
@@ -209,12 +226,50 @@ class Program
             { "9", "Hälsa" }
         };
 
-        // Kontrollerar om användarvalet (nyckeln) finns i ordboken. Om den finns lagras kategorinamnet i selectedCategory. 
-        if (categories.TryGetValue(userChoice, out var selectedCategory))
-        {
-            // Informerar användaren om den valda kategorin och förklarar hur spelet går till.
-            Console.WriteLine($"\nDu valde '{selectedCategory}' och kommer nu få gissa julklappen för 10 rim ur den kategorin.");
-            Console.WriteLine($"För varje rätt svar kommer du få ett poäng. Högsta möjliga resultat är 10/10. Lycka till!");
+            // Kontrollerar om användarvalet (nyckeln) finns i ordboken. Om den finns lagras kategorinamnet i selectedCategory. 
+            if (categories.TryGetValue(userChoice, out var selectedCategory))
+            {
+                // Informerar användaren om den valda kategorin och förklarar hur spelet går till.
+                Console.WriteLine($"\nDu valde '{selectedCategory}' och kommer nu få gissa julklappen för 10 rim ur den kategorin.");
+                Console.WriteLine($"För varje rätt svar kommer du få ett poäng. Högsta möjliga resultat är 10/10. Lycka till!");
+
+                // Ber användaren trycka på ENTER för att starta spelet.
+                Console.WriteLine("\nTryck på ENTER för att fortsätta.");
+                Console.ReadLine();
+
+                // Filtrerar rimmen utifrån kategori och skapar en lista för vald kategori. 
+                var rhymesInSelectedCategory = rimList.Rimsamling.Where(r => r.Kategori == selectedCategory).ToList();
+
+                // Skapar en poängräknare där default-värdet är 0.
+                int score = 0;
+
+                // Loop som hanterar användarens gissningar. Visar max 10 rim från vald kategori.
+                foreach (var item in rhymesInSelectedCategory.Take(10))
+                {
+                    // Rimmet skrivs ut och användaren får gissa.
+                    Console.WriteLine($"\nRim: {item.Rim}");
+                    Console.Write("\nGissa julklappen: ");
+
+                    // Användarens gissning läses in.
+                    string? guess = Console.ReadLine();
+
+                    // Kontrollerar om gissningen matchar julklappens namn. 
+                    if (guess.ToLower() == item.Julklapp.ToLower())
+                    {
+                        Console.WriteLine("\nDu svarade rätt!");
+                        // Vid rätt svar ökas poängräknaren med 1.
+                        score++;
+                    }
+                    // Om gissningen inte matchar...
+                    else
+                    {
+                        Console.WriteLine($"\nDu svarade fel. Rätt svar var: {item.Julklapp}");
+                    }
+                }
+
+                // Visar spelresultatet för användaren efter avslutat spel.
+                Console.WriteLine($"\nNu är spelet slut. Ditt resultat blev {score}/10!");
+            }
         }
     }
 }
