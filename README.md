@@ -12,4 +12,4 @@ Här får användaren välja vilken kategori hen önskar se lagrade julkappar f�
 
 ### Spela "Gissa julklappen"
 
-"Gissa julklappen" är en spelutmaning där användaren ska gissa julklappar inom en viss kategori. Användaren får först välja en kategori (1-9) och får sedan gissa julklappen utifrån det rim som visas. Användaren får endast ett försök på sig att gissa rätt per rim och när användaren gissat på 10 rim visas en poängsammanställning för den omgången.
+"Gissa julklappen" är en spelutmaning där användaren ska gissa julklappar inom en viss kategori. Användaren får först välja en kategori (1-9) och får sedan gissa julklappen utifrån det rim som visas. Användaren får endast ett försök på sig att gissa rätt per rim och rätt svar ger ett poäng. När användaren gissat på 10 rim visas en sammanställning av resultatet tillsammans med valmöjligheterna spela igen eller avsluta.
