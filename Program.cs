@@ -184,8 +184,10 @@ class Program
             return;
         }
 
-        bool continueSearch = true; // Variabel för att styra loopen
+        // Initierar en boolean som har true som default-värde. 
+        bool continueSearch = true;
 
+        // Loop som kör tills dess att användaren väljer att avsluta sökningen.
         while (continueSearch)
         {
             // Rensar konsollen på tidigare info.
@@ -208,6 +210,8 @@ class Program
             {
                 // Visar meddelande om att input är nödvändig.
                 Console.WriteLine("\nDu måste ange en julklapp för att söka rim.");
+
+                // Fortsätter exekvering av kod.
                 continue;
             }
             // Kontrollerar om specifiedGift är 0, då avbryts sökningen.
@@ -260,9 +264,10 @@ class Program
                 // Hanterar användarens val om ny sökning eller avsluta. Loopar tills ett giltigt val görs.
                 while (!validSelection)
                 {
-
                     // Frågar användaren om hen vill göra en ny sökning.
                     Console.WriteLine("\nVill du göra en ny sökning? Ange 1 för JA eller ange 0 för NEJ.\n");
+
+                    // Läser in användarens val (hanterar null-värde med ?).
                     string? selectedOption = Console.ReadLine()?.ToLower();
 
                     // Kontrollerar användarens svar.
@@ -417,6 +422,8 @@ class Program
                 {
                     Console.WriteLine("\nDu har valt att avbryta spelet. Tryck på ENTER för att gå till huvudmenyn.");
                     Console.ReadLine();
+
+                    // Returnerar användaren till huvudmenyn.
                     return;
                 }
 
@@ -470,6 +477,8 @@ class Program
                 {
                     // Frågar användaren om hen vill spela en gång till.
                     Console.WriteLine("\nVill du spela igen? Ange 1 för JA eller ange 0 för NEJ.\n");
+
+                    // Läser in användarens val (hanterar null-värde med ?).
                     string? selectedOption = Console.ReadLine()?.ToLower();
 
                     // Kontrollerar användarens svar.
