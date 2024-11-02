@@ -56,10 +56,12 @@ class Program
         {
             // Söker rim för en julklapp.
             case "1":
-                Console.WriteLine("\nFungerar inte att söka rim än...");
                 // Bekräftar valet och ber användaren trycka på ENTER för att starta sökningen.
-                Console.WriteLine("\nTryck på ENTER för att göra en sökning.");
+                Console.WriteLine("\nDu valde att söka rim för en specifik julklapp. Tryck på ENTER för att gå vidare.");
                 Console.ReadLine();
+
+                // Anropar funktionen som hanterar sökning efter rim.
+                SearchForRhymes();
                 break;
 
             // Söker julklappar utifrån kategori.
@@ -73,10 +75,11 @@ class Program
             // Startar spelet "Gissa julklappen".
             case "3":
                 // Bekräftar valet och ber användaren trycka på ENTER för att visa spelmeny för gissnings-spelet.");
-                Console.WriteLine("\nDu valde att spela 'Gissa julklappen'. Tryck på ENTER för att komma till spelet och dess meny.");
+                Console.WriteLine("\nDu valde att spela 'Gissa julklappen'. Tryck på ENTER för att gå vidare till spelet.");
                 Console.ReadLine();
-                ShowGameMenu();
 
+                // Anropar funktionen som hanterar spelmenyn.
+                ShowGameMenu();
                 break;
 
             /* Visa alla rim lagrade i JSON-filen.
@@ -158,7 +161,143 @@ class Program
         // Om det är flera dagar till julafton...
         else
         {
-            Console.WriteLine($"\nIdag är det bara {daysUntilChristmas.Days} dagar kvar till julafton!");
+            Console.WriteLine($"\nIdag är det bara {daysUntilChristmas.Days} dagar kvar till julafton!\n");
+        }
+    }
+
+    // Funktion som hanterar sökning på rim utifrån angiven julklapp.
+    static void SearchForRhymes()
+    {
+        // Rensar konsollen på tidigare meny.
+        Console.Clear();
+
+        // Läser in JSON-filen som en sträng.
+        string jsonFile = File.ReadAllText("rimsamling.json");
+
+        // Deserialiserar JSON-strängen till ett RimList-objekt (hanterar nullvärden med ?)
+        RimList? rimList = JsonSerializer.Deserialize<RimList>(jsonFile);
+
+        // Kontrollerar om värdet är null och hanterar det med ett meddelande.
+        if (rimList == null || rimList.Rimsamling == null)
+        {
+            Console.WriteLine("Tyvärr, inga rim hittades.");
+            return;
+        }
+
+        bool continueSearch = true; // Variabel för att styra loopen
+
+        while (continueSearch)
+        {
+            // Rensar konsollen på tidigare info.
+            Console.Clear();
+
+            // Visar "meny" för sökning och ger information om hur en sökning går till.
+            Console.WriteLine("\nVÄLKOMMEN ATT SÖKA RIM!");
+            Console.WriteLine("\nHär kan du ange en specifik julklapp och se rim som passar till den.");
+            Console.WriteLine("Efter avslutad sökning får du möjlighet att göra en ny sökning, så om din julklapp inte finns lagrad, prova en annan!");
+            Console.WriteLine("Om du vill avbryta sökningen, ange 0.");
+
+            // Ber användaren skriva in vilken julklapp det önskas rim för.
+            Console.WriteLine("\nAnge den julklapp du önskar söka rim för:\n");
+
+            // Initierar variabel för användarinput, en specifik julklapp.
+            string? specifiedGift = Console.ReadLine()?.ToLower();
+
+            // Kontrollerar om specifiedGift är null eller tom.
+            if (string.IsNullOrEmpty(specifiedGift))
+            {
+                // Visar meddelande om att input är nödvändig.
+                Console.WriteLine("\nDu måste ange en julklapp för att söka rim.");
+                continue;
+            }
+            // Kontrollerar om specifiedGift är 0, då avbryts sökningen.
+            else if (specifiedGift == "0")
+            {
+                // Visar meddelande om avrbuten sökning.
+                Console.WriteLine("\nDu valde att avbryta sökningen. Tryck på ENTER för att gå till huvudmenyn.");
+                Console.ReadLine();
+
+                // Boolean sätts till false och användaren skickas till huvudmenyn.
+                continueSearch = false;
+            }
+            else
+            {
+                // Hittar alla rim för julklappen som matchar användarens input.
+                var rhymesForGift = rimList.Rimsamling.FindAll(rhyme => rhyme.Julklapp.ToLower().Contains(specifiedGift));
+
+                // Kontrollerar om rim för angiven julklapp finns.
+                if (rhymesForGift.Count > 0)
+                {
+                    // Rensar konsollen.
+                    Console.Clear();
+
+                    // Skriver ut meddelande om att rim hittats och visar det/dem.
+                    Console.WriteLine($"\nVarsågod, här visas rim för den julklapp du angav:\n");
+
+                    // Loopar igenom de rim som innehåller angiven julklapp.
+                    foreach (var item in rhymesForGift)
+                    {
+                        Console.WriteLine($"Julklapp: {item.Julklapp}");
+                        Console.WriteLine($"Rim: {item.Rim}");
+
+                        // Lägger en tom rad mellan varje post.
+                        Console.WriteLine();
+                    }
+                }
+                // Om inga rim hittas...
+                else
+                {
+                    // Rensar konsollen på tidigare information.
+                    Console.Clear();
+
+                    // Meddelar användaren om att rim saknas.
+                    Console.WriteLine("\nInga rim hittades för denna julklapp.");
+                }
+
+                // Initerar en boolean med default-värde false för kontroll av val.
+                bool validSelection = false;
+
+                // Hanterar användarens val om ny sökning eller avsluta. Loopar tills ett giltigt val görs.
+                while (!validSelection)
+                {
+
+                    // Frågar användaren om hen vill göra en ny sökning.
+                    Console.WriteLine("\nVill du göra en ny sökning? Ange 1 för JA eller ange 0 för NEJ.\n");
+                    string? selectedOption = Console.ReadLine()?.ToLower();
+
+                    // Kontrollerar användarens svar.
+                    if (selectedOption == "1")
+                    {
+                        // Bekräftar val och ber användaren trycka på ENTER för att göra en ny sökning.
+                        Console.WriteLine("\nVad trevligt att du vill söka efter fler rim! Tryck på ENTER för att göra en ny sökning.");
+                        Console.ReadLine();
+
+                        // Boolean sätts till true då detta är ett giltigt val. Avslutar loopen.
+                        validSelection = true;
+                    }
+                    else if (selectedOption == "0")
+                    {
+                        // Bekräftar val och ber användaren trycka på ENTER för att avsluta.
+                        Console.WriteLine("\nDu valde att avsluta. Tryck på ENTER för att gå till huvudmenyn.");
+                        Console.ReadLine();
+
+                        // Boolean sätts till true då detta är ett giltigt val. Avslutar loopen.
+                        validSelection = true;
+
+                        // Boolean sätts till false och sökning avslutas.
+                        continueSearch = false;
+                    }
+                    else
+                    {
+                        // Hanterar felaktigt val med vägledande meddelande.
+                        Console.WriteLine("\nEtt felaktigt val har gjorts. Tryck på ENTER och försök igen!");
+                        Console.ReadLine();
+
+                        // Rensar konsollen.
+                        Console.Clear();
+                    }
+                }
+            }
         }
     }
 
@@ -195,7 +334,7 @@ class Program
         if (userChoice == "0")
         {
             // Bekräftar valet och ber användaren trycka på ENTER för att gå tillbaka till huvudmenyn.
-            Console.WriteLine("\nDu valde att avbryta. Tryck på ENTER för att gå tillbaka till huvudmenyn.");
+            Console.WriteLine("\nDu valde att avbryta. Tryck på ENTER för att gå till huvudmenyn.");
             Console.ReadLine();
 
             // Returnerar till huvudloopen.
@@ -268,8 +407,18 @@ class Program
                 Console.WriteLine("Högsta möjliga resultat är 10/10. Lycka till!");
 
                 // Ber användaren trycka på ENTER för att starta spelet.
-                Console.WriteLine("\nTryck på ENTER för att starta spelet.");
-                Console.ReadLine();
+                Console.WriteLine("\nTryck på ENTER för att starta spelet. Vill du avbryta spelet, ange 0.\n");
+
+                // Kontrollerar om användaren skrivit in 0 som input.
+                string? userCancel = Console.ReadLine();
+
+                // Kontrollerar om användaren valt att avbryta spelet.
+                if (userCancel?.ToLower() == "0")
+                {
+                    Console.WriteLine("\nDu har valt att avbryta spelet. Tryck på ENTER för att gå till huvudmenyn.");
+                    Console.ReadLine();
+                    return;
+                }
 
                 // Rensar konsollen så att rimmen visas för sig.
                 Console.Clear();
@@ -313,53 +462,50 @@ class Program
                 Console.WriteLine("SPELET ÄR SLUT!");
                 Console.WriteLine($"\nDitt resultat blev {score}/10.\n");
 
-                // Anropar huvudmenyn så att användaren kan göra vidare val.
-                ShowAfterGameMenu();
-            }
+                // Initerar en boolean med default-värde false för kontroll av val.
+                bool validSelection = false;
 
-            // Funktion som hanterar en meny efter spelslut.
-            static void ShowAfterGameMenu()
-            {
-                // Visar användarens valmöjligheter efter spelets slut.
-                Console.WriteLine("\nVad önskar du göra nu?");
-                Console.WriteLine("\n1 - Spela 'Gissa julklappen' igen.");
-                Console.WriteLine("0 - Avsluta och gå till huvudmenyn.\n");
-
-                // Läser in användarens val (hanterar null-värde med ?).
-                string? selectedOption = Console.ReadLine();
-
-                // Startar om spelet om användarvalet är 1.
-                if (selectedOption == "1")
+                // Hanterar användarens val om ny spelomgång eller avsluta. Loopar tills ett giltigt val görs.
+                while (!validSelection)
                 {
-                    // Bekräftar val och ber användaren trycka på ENTER för att starta om spelet.
-                    Console.WriteLine("\nVad kul att du vill spela igen! Tryck på ENTER för att starta om spelet.");
-                    Console.ReadLine();
+                    // Frågar användaren om hen vill spela en gång till.
+                    Console.WriteLine("\nVill du spela igen? Ange 1 för JA eller ange 0 för NEJ.\n");
+                    string? selectedOption = Console.ReadLine()?.ToLower();
 
-                    // Anropar ShowGameMenu() för att starta om spelet.
-                    ShowGameMenu();
-                }
-                // Avslutar spelet om användarvalet är 0.
-                else if (selectedOption == "0")
-                {
-                    // Bekräftar val och ber användaren trycka på ENTER för att avsluta.
-                    Console.WriteLine("\nDu valde att avsluta. Tryck på ENTER för att gå till huvudmenyn.");
-                    Console.ReadLine();
+                    // Kontrollerar användarens svar.
+                    if (selectedOption == "1")
+                    {
+                        // Bekräftar val och ber användaren trycka på ENTER för att starta om spelet.
+                        Console.WriteLine("\nVad kul att du vill spela igen! Tryck på ENTER för att starta om spelet.");
+                        Console.ReadLine();
 
-                    // Returnerar till huvudloopen.
-                    return;
-                }
-                // Visar ett felmeddelande vid ogiltigt val och ber användaren att försöka igen.
-                else
-                {
-                    // Ber användaren trycka på ENTER för att försöka igen.
-                    Console.WriteLine("\nEtt felaktigt val har gjorts. Tryck på ENTER och försök igen!");
-                    Console.ReadLine();
+                        // Boolean sätts till true då detta är ett giltigt val. Avslutar loopen.
+                        validSelection = true;
 
-                    // Rensar konsollen innan menyn visas igen.
-                    Console.Clear();
+                        // Anropar spelmeny-funktionen.
+                        ShowGameMenu();
+                    }
+                    else if (selectedOption == "0")
+                    {
+                        // Bekräftar val och ber användaren trycka på ENTER för att avsluta.
+                        Console.WriteLine("\nDu valde att avsluta. Tryck på ENTER för att gå till huvudmenyn.");
+                        Console.ReadLine();
 
-                    // Anropar "efter-spel-menyn".
-                    ShowAfterGameMenu();
+                        // Boolean sätts till true då detta är ett giltigt val. Avslutar loopen.
+                        validSelection = true;
+
+                        // Returnerar till huvudloopen.
+                        return;
+                    }
+                    else
+                    {
+                        // Ber användaren trycka på ENTER för att försöka igen.
+                        Console.WriteLine("\nEtt felaktigt val har gjorts. Tryck på ENTER och försök igen!");
+                        Console.ReadLine();
+
+                        // Rensar konsollen.
+                        Console.Clear();
+                    }
                 }
             }
         }
