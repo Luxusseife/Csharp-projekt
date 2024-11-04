@@ -37,7 +37,7 @@ class Program
         }
     }
 
-    // Funktion som visar och hanterar huvudmenyn. Instanser 
+    // Metod som visar och hanterar huvudmenyn. 
     static void ShowStartMenu(RhymeHandler rhymeHandler, GiftHandler giftHandler, GameHandler gameHandler)
     {
         // Initierar input-variabel (hanterar null-värde med ?).
