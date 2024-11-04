@@ -13,6 +13,7 @@ public class RhymeHandler
     // Privat fältvariabel som lagrar deserialiserad rimdata (nullvärden hanteras med ?-operatorn).
     private RimList? rimList;
 
+    // Konstruktor som hanterar inläsning av data från JSON-filen.
     public RhymeHandler()
     {
         // Skapa en instans av FileHandler med sökvägen till JSON-filen.
@@ -20,7 +21,7 @@ public class RhymeHandler
 
         // Anropa metoden för att läsa in rimlistan.
         rimList = fileHandler.LoadRimList();
-        
+
         // Om rimlistan är null, hantera detta lämpligt.
         if (rimList == null || rimList.Rimsamling == null)
         {

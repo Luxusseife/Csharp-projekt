@@ -20,19 +20,22 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.Unicode;
         Console.InputEncoding = System.Text.Encoding.Unicode;
 
-        // Skapar en instans av RhymeSearchHandler.
+        // Skapar en instans av RhymeHandler.
         RhymeHandler rhymeHandler = new RhymeHandler();
+
+        // Skapar en instans av GiftHandler.
+        GiftHandler giftHandler = new GiftHandler();
 
         // Huvudloop som körs tills användaren väljer att avsluta applikationen.
         while (appIsRunning)
         {
             // Anropar huvudmenyn och skickar in instansen.
-            ShowStartMenu(rhymeHandler); 
+            ShowStartMenu(rhymeHandler, giftHandler); 
         }
     }
 
     // Funktion som visar och hanterar huvudmenyn. Instanser 
-    static void ShowStartMenu(RhymeHandler rhymeHandler)
+    static void ShowStartMenu(RhymeHandler rhymeHandler, GiftHandler giftHandler)
     {
         // Initierar input-variabel (hanterar null-värde med ?).
         string? userInput;
@@ -74,7 +77,7 @@ class Program
                 Console.ReadLine();
 
                 // Anropar funktionen som hanterar sökning efter rim.
-                SearchForGifts();
+                giftHandler.SearchForGifts();
                 break;
 
             // Startar spelet "Gissa julklappen".
@@ -284,7 +287,7 @@ class Program
         }
     }*/
 
-    // Funktion som hanterar sökning på julklappar utifrån angiven kategori.
+    /* Funktion som hanterar sökning på julklappar utifrån angiven kategori.
     static void SearchForGifts()
     {
         // Rensar konsollen på tidigare meny.
@@ -455,7 +458,7 @@ class Program
                 }
             }
         }
-    }
+    }*/
 
     // Funktion som visar spelmenyn och hanterar användarens val.
     static void ShowGameMenu()
