@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-// Publik klass som hanterar sökning på rim utifrån specifik julklapp.
+// Publik klass som hanterar spelmomentet.
 public class GameHandler
 {
     // Privat fältvariabel som lagrar deserialiserad rimdata (nullvärden hanteras med ?-operatorn).
