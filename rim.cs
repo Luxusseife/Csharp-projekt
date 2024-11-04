@@ -2,7 +2,7 @@
 namespace projekt
 {
     // Klassen RimItem representerar en post med julklapp, rim och kategori.
-    class RimItem
+    public class RimItem
     {
         // Publika egenskaper för lagring av julklapp, rim och kategori. Default är en tom sträng.
         public string Julklapp { get; set; } = string.Empty;
@@ -11,7 +11,7 @@ namespace projekt
     }
 
     // Klassen RimList hanterar en samling av rim-poster. 
-    class RimList
+    public class RimList
     {
         // En lista med alla rim-poster. Default-listan är en tom sträng.
         public List<RimItem> Rimsamling { get; set; } = new List<RimItem>();

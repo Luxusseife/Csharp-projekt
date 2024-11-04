@@ -20,16 +20,19 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.Unicode;
         Console.InputEncoding = System.Text.Encoding.Unicode;
 
+        // Skapar en instans av RhymeSearchHandler.
+        RhymeHandler rhymeHandler = new RhymeHandler();
+
         // Huvudloop som körs tills användaren väljer att avsluta applikationen.
         while (appIsRunning)
         {
-            // Anropar huvudmenyn.
-            ShowStartMenu();
+            // Anropar huvudmenyn och skickar in instansen.
+            ShowStartMenu(rhymeHandler); 
         }
     }
 
-    // Funktion som visar och hanterar huvudmenyn.
-    static void ShowStartMenu()
+    // Funktion som visar och hanterar huvudmenyn. Instanser 
+    static void ShowStartMenu(RhymeHandler rhymeHandler)
     {
         // Initierar input-variabel (hanterar null-värde med ?).
         string? userInput;
@@ -43,7 +46,7 @@ class Program
         ShowDaysUntilChristmas();
         // Fortsätter utskrift av meny...
         Console.WriteLine("\nVad önskar du göra?");
-        Console.WriteLine("\n1 - Söka rim för en specfik julklapp.");
+        Console.WriteLine("\n1 - Söka rim för en specifik julklapp.");
         Console.WriteLine("2 - Söka julklappar utifrån kategori.");
         Console.WriteLine("3 - Spela 'Gissa julklappen'.");
         Console.WriteLine("\n0 - Avsluta applikationen.\n");
@@ -60,8 +63,8 @@ class Program
                 Console.WriteLine("\nDu valde att söka rim för en specifik julklapp. Tryck på ENTER för att gå vidare.");
                 Console.ReadLine();
 
-                // Anropar funktionen som hanterar sökning efter rim.
-                SearchForRhymes();
+                // Anropar metoden som hanterar sökning efter rim.
+                rhymeHandler.SearchForRhymes();
                 break;
 
             // Söker julklappar utifrån kategori.
@@ -139,7 +142,7 @@ class Program
         }
     }
 
-    // Funktion som hanterar sökning på rim utifrån angiven julklapp.
+    /* Funktion som hanterar sökning på rim utifrån angiven julklapp.
     static void SearchForRhymes()
     {
         // Rensar konsollen på tidigare meny.
@@ -279,7 +282,7 @@ class Program
                 }
             }
         }
-    }
+    }*/
 
     // Funktion som hanterar sökning på julklappar utifrån angiven kategori.
     static void SearchForGifts()
@@ -362,7 +365,7 @@ class Program
 
                 // Hittar alla julklappar i den valda kategorin och tar bort dubbletter av julklappar.
                 var giftsInSelectedCategory = rimList.Rimsamling
-                    .Where(item => item.Kategori == selectedCategory) 
+                    .Where(item => item.Kategori == selectedCategory)
                     // Grupperar efter julklappsnamn för att ta bort dubbletter.
                     .GroupBy(item => item.Julklapp)
                     .Select(group => group.First())
