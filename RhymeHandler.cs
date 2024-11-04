@@ -54,7 +54,6 @@ public class RhymeHandler
             // Visar "meny" för sökning och ger information om hur en sökning går till.
             Console.WriteLine("\nVÄLKOMMEN ATT SÖKA RIM!");
             Console.WriteLine("\nHär kan du ange en specifik julklapp och se rim som passar till den.");
-            Console.WriteLine("Efter avslutad sökning får du möjlighet att göra en ny sökning, så om din julklapp inte finns lagrad, prova en annan!");
             Console.WriteLine("Om du vill avbryta sökningen, ange 0.");
 
             // Ber användaren skriva in vilken julklapp det önskas rim för.
@@ -124,7 +123,7 @@ public class RhymeHandler
                 while (!validSelection)
                 {
                     // Frågar användaren om hen vill göra en ny sökning.
-                    Console.WriteLine("\nVill du göra en ny sökning? Ange 1 för JA eller ange 0 för NEJ.\n");
+                    Console.WriteLine("\nVill du göra en ny sökning på rim? Ange 1 för JA eller ange 0 för NEJ.\n");
 
                     // Läser in användarens val (hanterar null-värde med ?).
                     string? selectedOption = Console.ReadLine();

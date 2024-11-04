@@ -62,8 +62,7 @@ public class GiftHandler
             // Visar "menyn" för sök utifrån kategori.
             Console.WriteLine("\nVÄLKOMMEN ATT SÖKA EFTER JULKLAPPAR!");
             Console.WriteLine("\nHär kan du ange en kategori och se vilka julklappar som finns lagrade i den.");
-            Console.WriteLine("Efter avslutad sökning får du möjlighet att göra en ny sökning om du önskar utforska fler kategorier.");
-
+            
             // Ber användaren skriva in vilken julklapp det önskas rim för.
             Console.WriteLine("\nDessa kategorier finns tillgängliga:\n");
 
@@ -150,7 +149,7 @@ public class GiftHandler
             while (!validSelection)
             {
                 // Frågar användaren om hen vill göra en ny sökning.
-                Console.WriteLine("\nVill du göra en ny sökning? Ange 1 för JA eller ange 0 för NEJ.\n");
+                Console.WriteLine("\nVill du göra en ny sökning på julklappar? Ange 1 för JA eller ange 0 för NEJ.\n");
 
                 // Läser in användarens val (hanterar null-värde med ?).
                 string? selectedOption = Console.ReadLine();
