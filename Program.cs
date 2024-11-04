@@ -26,16 +26,19 @@ class Program
         // Skapar en instans av GiftHandler.
         GiftHandler giftHandler = new GiftHandler();
 
+        // Skapar en instans av GameHandler.
+        GameHandler gameHandler = new GameHandler();
+
         // Huvudloop som körs tills användaren väljer att avsluta applikationen.
         while (appIsRunning)
         {
             // Anropar huvudmenyn och skickar in instansen.
-            ShowStartMenu(rhymeHandler, giftHandler); 
+            ShowStartMenu(rhymeHandler, giftHandler, gameHandler); 
         }
     }
 
     // Funktion som visar och hanterar huvudmenyn. Instanser 
-    static void ShowStartMenu(RhymeHandler rhymeHandler, GiftHandler giftHandler)
+    static void ShowStartMenu(RhymeHandler rhymeHandler, GiftHandler giftHandler, GameHandler gameHandler)
     {
         // Initierar input-variabel (hanterar null-värde med ?).
         string? userInput;
@@ -87,7 +90,7 @@ class Program
                 Console.ReadLine();
 
                 // Anropar funktionen som hanterar spelmenyn.
-                ShowGameMenu();
+                gameHandler.ShowGameMenu();
                 break;
 
             // Avslutar applikationen.
@@ -460,7 +463,7 @@ class Program
         }
     }*/
 
-    // Funktion som visar spelmenyn och hanterar användarens val.
+    /* Funktion som visar spelmenyn och hanterar användarens val.
     static void ShowGameMenu()
     {
         // Initierar val-variabel (hanterar null-värde med ?).
@@ -672,5 +675,5 @@ class Program
                 }
             }
         }
-    }
+    }*/
 }
